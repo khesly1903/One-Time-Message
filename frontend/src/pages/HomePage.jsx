@@ -34,18 +34,14 @@ export default function HomePage() {
       maxWidth="xl"
       sx={{ display: "flex", alignItems: "center", m: "0rem 2rem" }}
     >
-      {/* ANA LAYOUT YAPISI (STACK)
-        xs (mobil): column (alt alta)
-        md (masaüstü): row (yan yana)
-        spacing: aralarındaki boşluk
-      */}
+      
       <Stack
         direction={{ xs: "column", lg: "row" }}
         spacing={{ xs: 8, md: 12 }}
         alignItems="center"
         sx={{ py: 8, width: "100%" }}
       >
-        {/* ================= SOL TARAF: VİZYON (FLEX: 1) ================= */}
+
         <Box sx={{ flex: 1, width: "100%" }}>
           <Stack spacing={4}>
             {/* 1. Logo ve Başlık */}
@@ -95,7 +91,7 @@ export default function HomePage() {
               </Typography>
             </Box>
 
-            {/* 2. Teknik Açıklama */}
+
             <Paper elevation={0} sx={{ p: 3, border: 0, borderRadius: 4 }}>
               <List disablePadding>
                 <ListItem disableGutters sx={{ pb: 2 }}>
@@ -153,7 +149,7 @@ export default function HomePage() {
               </List>
             </Paper>
 
-            {/* 3. Aksiyon Butonları */}
+
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={2}
@@ -224,10 +220,10 @@ export default function HomePage() {
           </Stack>
         </Box>
 
-        {/* ================= SAĞ TARAF: NASIL ÇALIŞIR (FLEX: 1) ================= */}
+
         <Box sx={{ flex: 1, width: "100%" }}>
           <Stack spacing={4}>
-            {/* ADIM 1 */}
+
             <Paper
               elevation={3}
               sx={(theme) => ({
@@ -291,7 +287,7 @@ export default function HomePage() {
               </Stack>
             </Paper>
 
-            {/* ADIM 2 */}
+
             <Paper
               elevation={3}
               sx={(theme) => ({
@@ -358,7 +354,7 @@ export default function HomePage() {
               </Stack>
             </Paper>
 
-            {/* ADIM 3 */}
+
             <Paper
               elevation={10}
               sx={(theme) => ({

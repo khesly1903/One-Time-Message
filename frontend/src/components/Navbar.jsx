@@ -54,6 +54,7 @@ export default function Navbar() {
               component={RouterLink}
               to="/"
               sx={{
+                display:{xs:"none",sm:"block"},
                 mr: 2,
                 fontFamily: "Saira Stencil One",
                 fontWeight: 700,
@@ -165,7 +166,7 @@ export default function Navbar() {
             </Tooltip>
 
             <Link
-              href="https://github.com"
+              href="https://github.com/khesly1903/One-Time-Message"
               target="_blank"
               color="inherit"
               sx={{
