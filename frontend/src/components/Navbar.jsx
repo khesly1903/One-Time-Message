@@ -9,6 +9,8 @@ import {
   IconButton,
   Tooltip,
   Button,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
@@ -22,6 +24,8 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 export default function Navbar() {
   const { mode, toggleTheme } = useThemeStore();
+const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
@@ -54,7 +58,7 @@ export default function Navbar() {
               component={RouterLink}
               to="/"
               sx={{
-                display:{xs:"none",sm:"block"},
+                // display:{xs:"none",sm:"block"},
                 mr: 2,
                 fontFamily: "Saira Stencil One",
                 fontWeight: 700,
@@ -65,7 +69,7 @@ export default function Navbar() {
                 fontSize: { xs: "1rem", sm: "1.25rem" },
               }}
             >
-              ONE TIME MESSAGE
+             {isMobile ? "OTM" : "ONE TIME MESSAGE"}
             </Typography>
           </Box>
 
