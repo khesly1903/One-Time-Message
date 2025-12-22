@@ -1,10 +1,10 @@
-import dotenv from "dotenv";
 import express from "express";
 import mysql from "mysql2/promise";
 import cors from "cors";
 import { randomUUID } from "crypto";
 
-dotenv.config();
+// import dotenv from "dotenv";
+// dotenv.config();
 
 const app = express();
 const PORT = Number(process.env.PORT || 3001);
