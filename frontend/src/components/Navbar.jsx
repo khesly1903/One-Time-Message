@@ -43,7 +43,7 @@ const theme = useTheme()
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           {/* --- SOL TARAF: LOGO --- */}
-          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+          <Box component={RouterLink} sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
             <SecurityIcon
               sx={{
                 // display: { xs: "none", md: "flex" },
