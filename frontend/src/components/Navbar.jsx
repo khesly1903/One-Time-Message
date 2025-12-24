@@ -24,7 +24,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 export default function Navbar() {
   const { mode, toggleTheme } = useThemeStore();
-const theme = useTheme()
+  const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const location = useLocation();
@@ -42,59 +42,61 @@ const theme = useTheme()
     >
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          {/* --- SOL TARAF: LOGO --- */}
-          <Box component={RouterLink} sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
-            <SecurityIcon
+          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+            <Box
+              component={RouterLink}
+              to="/"
               sx={{
-                // display: { xs: "none", md: "flex" },
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
                 mr: 1,
-                color: "primary.main",
               }}
-            />
-            {/* Logo Yazısı: Mobilde çok yer kaplamaması için fontu biraz küçültebiliriz */}
+            >
+              <SecurityIcon
+                sx={{
+                  color: "primary.main",
+                }}
+              />
+            </Box>
+
             <Typography
               variant="h6"
               noWrap
               component={RouterLink}
               to="/"
               sx={{
-                // display:{xs:"none",sm:"block"},
                 mr: 2,
                 fontFamily: "Saira Stencil One",
                 fontWeight: 700,
                 letterSpacing: ".1rem",
                 color: "inherit",
                 textDecoration: "none",
-                // Mobilde fontu küçültüyoruz ki butonlara yer kalsın
-                fontSize: { xs: "1rem", sm: "1.25rem" },
+                fontSize: { xs: "1.5rem", sm: "1.25rem" },
               }}
             >
-             {isMobile ? "OTM" : "ONE TIME MESSAGE"}
+              {isMobile ? "OTM" : "ONE TIME MESSAGE"}
             </Typography>
           </Box>
 
-          {/* --- ORTA/SAĞ TARAF: NAVİGASYON LİNKLERİ --- */}
           <Box
             sx={{
-              // DEĞİŞİKLİK 1: 'xs: none' yerine 'flex' yaptık. Artık hep görünür.
               display: "flex",
               alignItems: "center",
               gap: 1,
               mr: 2,
             }}
           >
-            {/* SENDER BUTTON */}
             <Button
               component={RouterLink}
               to="/sender"
               color="inherit"
-              // DEĞİŞİKLİK 2: startIcon'u kaldırdık, içeriği elle yazıyoruz
               sx={{
                 fontFamily: "Oxanium",
                 fontWeight: 600,
                 textTransform: "none",
                 borderRadius: 0,
-                minWidth: "auto", // Mobilde butonun gereksiz genişlemesini engeller
+                minWidth: "auto",
                 borderBottom: isActive("/sender")
                   ? "2px solid"
                   : "2px solid transparent",
@@ -108,10 +110,8 @@ const theme = useTheme()
                 },
               }}
             >
-              {/* İkon Her Zaman Görünür */}
               <ArrowUpwardIcon sx={{ fontSize: 20 }} />
 
-              {/* Yazı Sadece SM ve Üstünde Görünür */}
               <Box
                 component="span"
                 sx={{ display: { xs: "none", lg: "block" }, ml: 1 }}
@@ -120,7 +120,6 @@ const theme = useTheme()
               </Box>
             </Button>
 
-            {/* RECEIVER BUTTON */}
             <Button
               component={RouterLink}
               to="/receiver"
@@ -146,7 +145,6 @@ const theme = useTheme()
             >
               <ArrowDownwardIcon sx={{ fontSize: 20 }} />
 
-              {/* Yazı Sadece SM ve Üstünde Görünür */}
               <Box
                 component="span"
                 sx={{ display: { xs: "none", lg: "block" }, ml: 1 }}
@@ -155,13 +153,11 @@ const theme = useTheme()
               </Box>
             </Button>
 
-            {/* Ayırıcı Çizgi */}
             <Box
               sx={{ width: "1px", height: "24px", bgcolor: "divider", mx: 1 }}
             />
           </Box>
 
-          {/* --- EN SAĞ: TEMA VE GITHUB --- */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <Tooltip title="Görünümü Değiştir">
               <IconButton onClick={toggleTheme} color="inherit">
