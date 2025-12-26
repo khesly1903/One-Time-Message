@@ -29,11 +29,9 @@ backend/coverage/
 
 # Environment Variables (All directories)
 .env
-.env.*
-!.env.example
 !.env.sample
 **/.env
-**/.env.*
+
 
 # OS / Editor
 .DS_Store
